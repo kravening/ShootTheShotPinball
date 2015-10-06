@@ -4,25 +4,41 @@ using System.Collections;
 public class LeftFlipper : MonoBehaviour {
 
     private int rotationSpeed = 60;
-
-   
+    private bool _MotorUsage = false;
 	// Use this for initialization
 	void Start () {
-	
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        TurningJoint();
+
+        //TurningJoint();
 	}
 
     void TurningJoint()
     {
-        Debug.Log("hey");
-        if (this.transform.rotation.y < 350)
+          HingeJoint hinge = gameObject.GetComponent<HingeJoint>();
+          JointMotor motor = hinge.motor;
+          hinge.motor = motor;
+        if (_MotorUsage == true)
         {
-            transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+            hinge.useMotor = true;
         }
-
+        if (_MotorUsage == false)
+        {
+            hinge.useMotor = false;
+        }
     }
+    public void OnkeyDown()
+    {
+        _MotorUsage = true;
+        TurningJoint();
+    }
+    public void OnKeyUp()
+    {
+        _MotorUsage = false;
+        TurningJoint();
+    }
+   
 }

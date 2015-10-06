@@ -2,9 +2,11 @@
 using System.Collections;
 
 public class InputController : MonoBehaviour {
-	// Use this for initialization
+    // Use this for initialization
+    private LeftFlipper dinges;
+
 	void Start () {
-	
+        dinges = GetComponent<LeftFlipper>();
 	}
 	
 	// Update is called once per frame
@@ -19,6 +21,8 @@ public class InputController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             Debug.Log("left flipper D");
+            dinges.OnkeyDown();
+          
             //call public function in the flipper control that moves the flipper up
         }
         if (Input.GetKeyDown(KeyCode.RightControl))
@@ -36,6 +40,7 @@ public class InputController : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             Debug.Log("left flipper U");
+            dinges.OnKeyUp();
             //call public function in the flipper control that moves the flipper down.
         }
 
