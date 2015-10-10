@@ -3,11 +3,13 @@ using System.Collections;
 
 public class InputController : MonoBehaviour {
     // Use this for initialization
-    private LeftFlipper dinges;
+    private LeftFlipper _lefty;
+    private rightFlipper _righty;
 
 	void Start () {
-        dinges = GetComponent<LeftFlipper>();
-	}
+        _lefty = GetComponent<LeftFlipper>();
+        _righty = GetComponent<rightFlipper>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -20,33 +22,30 @@ public class InputController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            Debug.Log("left flipper D");
-            dinges.OnkeyDown();
+            _lefty.OnkeyDown();
           
             //call public function in the flipper control that moves the flipper up
         }
         if (Input.GetKeyDown(KeyCode.RightControl))
         {
-            Debug.Log("right flipper D");
             //call public function in the flipper control that moves the flipper up
+            _righty.OnkeyDown();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Added ball");
             //call public function in the cabinet that creates a ball
         }
         
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            Debug.Log("left flipper U");
-            dinges.OnKeyUp();
+            _lefty.OnKeyUp();
             //call public function in the flipper control that moves the flipper down.
         }
 
         if (Input.GetKeyUp(KeyCode.RightControl))
         {
-            Debug.Log("right flipper U");
+            _righty.OnKeyUp();
             //call public function in the flipper control that moves the flipper down.
         }
     }

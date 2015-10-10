@@ -1,35 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LeftFlipper : MonoBehaviour {
+public class rightFlipper : MonoBehaviour
+{
 
     private int rotationSpeed = 10000;
     private bool _MotorUsage = false;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         //TurningJoint();
-	}
+    }
 
     void TurningJoint()
     {
         Rigidbody rigid = gameObject.GetComponent<Rigidbody>();
 
-          HingeJoint hinge = gameObject.GetComponent<HingeJoint>();
-          JointMotor motor = hinge.motor;
-          hinge.motor = motor;
+        HingeJoint hinge = gameObject.GetComponent<HingeJoint>();
+        JointMotor motor = hinge.motor;
+        hinge.motor = motor;
 
 
         if (_MotorUsage == true)
         {
             hinge.useMotor = true;
-            
-            
+
+
         }
         if (_MotorUsage == false)
         {
@@ -47,5 +50,5 @@ public class LeftFlipper : MonoBehaviour {
         _MotorUsage = false;
         TurningJoint();
     }
-   
+
 }
