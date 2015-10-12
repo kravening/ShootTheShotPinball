@@ -36,8 +36,8 @@ public class rightFlipper : MonoBehaviour
         }
         if (_MotorUsage == false)
         {
-            hinge.useMotor = false;
             rigid.AddForce(Vector3.back * rotationSpeed, ForceMode.Acceleration);
+            hinge.useMotor = false;
         }
     }
     public void OnkeyDown()
