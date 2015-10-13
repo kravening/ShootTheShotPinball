@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class rightFlipper : MonoBehaviour
+public class Flipper : MonoBehaviour
 {
 
     private int rotationSpeed = 10000;
