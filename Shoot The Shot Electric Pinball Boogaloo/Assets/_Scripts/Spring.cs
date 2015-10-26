@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpringScript : MonoBehaviour {
+public class Spring : MonoBehaviour {
 
 
     // Use this for initialization

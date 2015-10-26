@@ -13,7 +13,7 @@ public class InputController : MonoBehaviour {
 
     [SerializeField]
     private GameObject _springy;
-    private SpingScript _bottomSpring;
+    private Spring _bottomSpring;
 
 
 	void Awake(){
@@ -24,6 +24,7 @@ public class InputController : MonoBehaviour {
     {
 		_rightFlipper = _righty.GetComponent<Flipper>();
 		_leftFlipper = _lefty.GetComponent<Flipper>();
+		_bottomSpring = _springy.GetComponent<Spring>();
     }
 	
 	// Update is called once per frame
