@@ -1,61 +1,77 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InputController : MonoBehaviour {
+public class InputController : MonoBehaviour
+{
     // Use this for initialization
+
     [SerializeField]
     private GameObject _lefty;
-	private Flipper _leftFlipper;
+    private Flipper _leftFlipper;
     [SerializeField]
     private GameObject _righty;
-	private Flipper _rightFlipper;
+    private Flipper _rightFlipper;
 
-	void Awake(){
-	}
+    [SerializeField]
+    private GameObject _springy;
+    private Spring _bottomSpring;
 
 
-	void Start()
+    void Awake()
     {
-		_rightFlipper = _righty.GetComponent<Flipper>();
-		_leftFlipper = _lefty.GetComponent<Flipper>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    void Start()
+    {
+        _rightFlipper = _righty.GetComponent<Flipper>();
+        _leftFlipper = _lefty.GetComponent<Flipper>();
+        _bottomSpring = _springy.GetComponent<Spring>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
         GetInput();
-	
-	}
+
+    }
 
     void GetInput()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-			_leftFlipper.OnkeyDown();
-          
+            _leftFlipper.OnkeyDown();
+
             //call public function in the flipper control that moves the flipper up
         }
         if (Input.GetKeyDown(KeyCode.RightControl))
         {
             //call public function in the flipper control that moves the flipper up
-			_rightFlipper.OnkeyDown();
+            _rightFlipper.OnkeyDown();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            _bottomSpring.onKeyDown();
             //call public function in the cabinet that creates a ball
         }
-        
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            _bottomSpring.onKeyUp();
+        }
+
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-			_leftFlipper.OnKeyUp();
+            _leftFlipper.OnKeyUp();
             //call public function in the flipper control that moves the flipper down.
         }
 
         if (Input.GetKeyUp(KeyCode.RightControl))
         {
-			_rightFlipper.OnKeyUp();
+            _rightFlipper.OnKeyUp();
             //call public function in the flipper control that moves the flipper down.
         }
+
     }
 }
