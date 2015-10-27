@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 4570779cee45256418667d4acb3d42e6
-timeCreated: 1444985551
+timeCreated: 1445935100
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - GateParticle: {instanceID: 0}
+  - hit: {fileID: 8300000, guid: d817f2bd0e81c6b45ae883808ded9420, type: 3}
+  - audio: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
