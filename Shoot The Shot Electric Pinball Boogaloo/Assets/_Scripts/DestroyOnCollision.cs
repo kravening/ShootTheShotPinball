@@ -26,13 +26,9 @@ public class DestroyOnCollision : MonoBehaviour
     {
         if (col.gameObject.tag == "ball")
         {
-            audio.PlayOneShot(hit, 1f);
-            //instantiate particle system op de plaats van de collision
-            Instantiate(GateParticle, col.transform.position, Quaternion.identity);
-            col.transform.position = new Vector3(-26, 2, -15);
-            //instantiate particle system op de plaats van de nieuwe spawn
-            Instantiate(GateParticle, col.transform.position, Quaternion.identity);
-            transform.position = new Vector3(-200, -200, -200);
+            //audio.PlayOneShot(hit, 1f);
+            Instantiate(GateParticle, this.transform.position, Quaternion.identity);
+			Destroy(this.gameObject);
         }
     }
 }
