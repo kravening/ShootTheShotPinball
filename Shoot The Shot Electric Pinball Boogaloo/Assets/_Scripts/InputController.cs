@@ -12,10 +12,6 @@ public class InputController : MonoBehaviour
     private GameObject _righty;
     private Flipper _rightFlipper;
 
-    [SerializeField]
-    private GameObject _springy;
-    private Spring _bottomSpring;
-
 
     void Awake()
     {
@@ -26,7 +22,6 @@ public class InputController : MonoBehaviour
     {
         _rightFlipper = _righty.GetComponent<Flipper>();
         _leftFlipper = _lefty.GetComponent<Flipper>();
-        _bottomSpring = _springy.GetComponent<Spring>();
     }
 
     // Update is called once per frame
@@ -53,12 +48,10 @@ public class InputController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _bottomSpring.onKeyDown();
             //call public function in the cabinet that creates a ball
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            _bottomSpring.onKeyUp();
         }
 
         if (Input.GetKeyUp(KeyCode.LeftControl))
