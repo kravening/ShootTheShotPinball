@@ -26,7 +26,7 @@ public class DestroyOnCollision : MonoBehaviour
     {
         if (col.gameObject.tag == "ball")
         {
-            //audio.PlayOneShot(hit, 1f);
+            audio.PlayOneShot(hit, 1f);
             Instantiate(GateParticle, this.transform.position, this.transform.rotation);
 			Destroy(this.gameObject);
         }
