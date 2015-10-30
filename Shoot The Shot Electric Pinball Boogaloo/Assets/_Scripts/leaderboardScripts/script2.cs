@@ -2,9 +2,6 @@
 using System.Collections;
 using UnityEngine.UI;
 public class script2 : MonoBehaviour {
-	
-	
-	public int scoreOfzo = 1;
 
     public Text[] fileTexts;
     

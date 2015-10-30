@@ -10,7 +10,7 @@ public class AddForceOnCollision : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col)
 	{
-		Debug.Log("ayy1");
+		//Debug.Log("ayy1");
 		if (col.rigidbody != null)
 		{
 			col.rigidbody.AddExplosionForce(_forceAmount,transform.position,_forceRadius);

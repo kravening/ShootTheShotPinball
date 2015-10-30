@@ -4,7 +4,7 @@ using System.Collections;
 public class script1 : MonoBehaviour {
 
 
-	public int scoreOfzo = 1;
+	public int scoreOfzo;
 	public string name; 
 
 	// Use this for initialization

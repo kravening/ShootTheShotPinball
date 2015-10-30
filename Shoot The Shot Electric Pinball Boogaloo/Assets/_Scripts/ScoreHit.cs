@@ -5,10 +5,12 @@ public class ScoreHit : MonoBehaviour {
 
     [SerializeField]
     private GameObject _Scores;
+	private Score _TheScores;
 
+//	private Flipper _rightFlipper;
     // Use this for initialization
     void Start () {
-  //      _Scores = _Scores.GetComponent<Score>();
+		_TheScores = _Scores.GetComponent<Score>();
         
 	}
 	
@@ -18,9 +20,10 @@ public class ScoreHit : MonoBehaviour {
 	}
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "ball")
+        if (col.gameObject.tag == "ball")
         {
-       //     _Scores._score -= 40;
+			//Debug.Log("Drop down for what?");
+			_TheScores.AddScore();
         }
 
     }
