@@ -11,6 +11,9 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private GameObject _righty;
     private Flipper _rightFlipper;
+	[SerializeField]
+	private GameObject _ballSpawner;
+	private BallSpawner _spawner;
 
 
     void Awake()
@@ -22,6 +25,7 @@ public class InputController : MonoBehaviour
     {
         _rightFlipper = _righty.GetComponent<Flipper>();
         _leftFlipper = _lefty.GetComponent<Flipper>();
+		_spawner = _ballSpawner.GetComponent<BallSpawner> ();
     }
 
     // Update is called once per frame
@@ -48,6 +52,7 @@ public class InputController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+			_spawner.SpawnBall();
             //call public function in the cabinet that creates a ball
         }
         if (Input.GetKeyUp(KeyCode.Space))
